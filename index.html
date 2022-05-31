@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Insta-Sohor</title>
+        <link rel="stylesheet" href="./css/style.css" />
+        <!-- Latest compiled and minified CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous"
+        />
+
+        <!-- google Montserrat  font  -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
+                <a class="navbar-brand" href="#">Insta-Sohor</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div
+                    class="collapse navbar-collapse justify-content-end"
+                    id="navbarSupportedContent"
+                >
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-link active" role="button" onclick="switchTab( 'posts' )">
+                            <i class="fa-solid fa-house"></i>
+                        </li>
+
+                        <li class="nav-link active" role="button" onclick="switchTab( 'liked' )">
+                            <i class="fa-solid fa-heart text-danger"></i>
+                        </li>
+
+                        <li class="nav-link active" role="button" onclick="switchTab( 'reported' )">
+                            <i class="fa-solid fa-eye-slash"></i>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="main container mx-auto p-3">
+            <div id="posts">
+            </div>
+            
+            <div id="liked">
+                <h1>Liked posts</h1>
+            </div>
+
+            <div id="reported">
+                <h1>Reported posts</h1>
+            </div>
+        </main>
+        <!-- bonus part added (question and answer) -->
+        <div class="mt-4" id="question">
+            <h1 class="text-center mb-3"> The Q & A</h1>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button class="accordion-button collapsed fw-bolder" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  What does event loop do?
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body"> JavaScript is a single-string editing language.The event loop is confidential when JavaScript gives us the illusion of being multithreaded even though it has a single thread. When the js engine receives data, javascript begins to separate its function by stack and line. Stack function is a parallel function. So usually make his code in sequence. If the stack receives any data for use that should wait such as downloading, repeat the operation, and send that data to the Queue. the line stores that data until the stack section is empty. So once it is confirmed that the stack is cleared and there is more data that needs to be done then the line moves that data to the stack section and it is used. The whole process is done with an event loop. therefore the event loop usually checks the weather stack to see if it has been cleared or not. if deleted then send queue data to the stack otherwise it will wait and keep checking. This is how the event loop in js engine works.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwo">
+                <button class="accordion-button collapsed fw-bolder" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  What is the diffrence between Local storage and session storage?
+                </button>
+              </h2>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    Browser storage is a feature that allows JavaScript sites and applications to store key pairs in a web browser with or out of date. Any types of data will be stored in storage by key and value. There are two types. 1) Storage space, 2) Storage session. In local storage browser save data permanently, In browser browser save data temporarily. in local storage if the user wants to clear the data the user has to do it at his own control. However, in save session it will be automatically deleted whenever the tab or browser is closed. Local storage only works on a specific tab or page. as long as the stored data will work in any tab. On the other hand session session is not a very good thing. clears previous data whenever the tab closes automatically. we can access and use local storage data whenever we need it. as we know that session storage data will be erased so it is not possible to use it.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer></footer>
+
+        <!-- add javascript  file  -->
+        <script src="./js/app.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    </body>
+</html>
